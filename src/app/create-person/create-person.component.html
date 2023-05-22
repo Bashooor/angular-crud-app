@@ -1,0 +1,33 @@
+ <div>
+    <h1 mat-dialog-title class="center"><b style="font-size: 20px;">Neue Person Hinzufügen</b></h1>
+    <div mat-dialog-content>
+
+        <div>
+            <mat-form-field style="margin-top: 25px; margin-left: 15px;">
+            <mat-label style="font-size: 15px;">Vorname</mat-label>
+            <input style="height: 35px;" matInput placeholder="Beshr" [(ngModel)]="newPerson.vorname" [formControl]="vornameForm" required>
+            <mat-error style="color: red; font-size: 11px;" *ngIf="vornameForm.invalid">{{getErrorMessageVorname()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field style="margin-top: 25px; margin-left: 15px;">
+            <mat-label style="font-size: 15px;">Nachname</mat-label>
+            <input style="height: 35px;" matInput placeholder="Alarand" [(ngModel)]="newPerson.nachname" [formControl]="nachnameForm" required>
+            <mat-error style="color: red; font-size: 11px;" *ngIf="nachnameForm.invalid">{{getErrorMessageNachname()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field style="margin-top: 25px; margin-left: 15px;">
+            <mat-label style="font-size: 15px;">Email Adresse</mat-label>
+            <input style="height: 35px;" matInput placeholder="pat@example.com" [(ngModel)]="newPerson.email" [formControl]="emailForm" required>
+            <mat-error style="color: red; font-size: 11px;" *ngIf="emailForm.invalid">{{getErrorMessageEmail()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button class="confirm-button" mat-dialog-close (click)="create()" [disabled]="(vornameForm.invalid) || (nachnameForm.invalid) || (emailForm.invalid)">bestätigen</button>
+            <button class="cancel-button" mat-dialog-close style = "border-radius: 10px; font-size: 16px; color: whitesmoke; background-color: red;">abbrechen</button>
+        </div>
+
+    </div>
+</div>

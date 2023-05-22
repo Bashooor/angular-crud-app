@@ -1,0 +1,23 @@
+<div calss="center" *ngIf="emptyList">
+    <p style="text-align: center; font-size: 20px; color: darkgray;">Die Liste ist leer!</p>
+</div>
+
+
+<div class="people-list center" style="margin-top: 20px;" *ngFor="let person of persons">
+
+    <div style="width: 250px;">
+        <mat-card>
+            <mat-card-content (click)="read(person)" style="background-color: lightgray; font-size: 20px; border-radius: 10px;">{{person.id}}. {{person.vorname}}</mat-card-content>
+        </mat-card>
+    </div>
+        <mat-icon (click)="edit(person)" fontIcon="edit" style="margin-left: 6px; color: blue; margin-top: 16px"></mat-icon>
+        <mat-icon (click)="delete(person.id)" fontIcon="delete" style="margin-left: 6px; color: red; margin-top: 14px"></mat-icon>
+    
+</div>
+
+
+<div class="center">
+    <button (click)="create()" mat-fab color="primary" class="add-button" title="Eine Person Hinzufügen">
+        <mat-icon fontIcon="add"></mat-icon>
+    </button>
+</div>

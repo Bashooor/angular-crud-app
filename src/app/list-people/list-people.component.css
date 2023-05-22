@@ -1,0 +1,13 @@
+.add-button {
+    margin-top: 50px;
+    background-color: blue;
+    color: whitesmoke;
+}
+
+.people-list {
+    height: 40px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
